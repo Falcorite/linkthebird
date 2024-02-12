@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird Guessing Game</title>
+    <style>
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            padding: 1em;
+            text-align: center;
+            color: white;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        #game-container {
+            text-align: center;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bird Guessing Game</h1>
+    </header>
+
+    <main>
+        <section id="game-container">
+            <h2>Guess the Number of Bird Seeds!</h2>
+            <p>Try to guess the correct number of bird seeds in the bowl.</p>
+
+            <label for="user-input">Your Guess:</label>
+            <input type="number" id="user-input">
+            <button onclick="checkGuess()">Check Guess</button>
+
+            <p id="result"></p>
+        </section>
+    </main>
+
+    <script>
+        // JavaScript for the bird guessing game
+        function checkGuess() {
+            // Get user input
+            var userInput = document.getElementById("user-input").value;
+
+            // Generate a random number of bird seeds between 1 and 20
+            var randomNumber = Math.floor(Math.random() * 20) + 1;
+
+            // Check if the guess is correct
+            if (userInput == randomNumber) {
+                document.getElementById("result").innerHTML = "Congratulations! You guessed the correct number of bird seeds!";
+            } else {
+                document.getElementById("result").innerHTML = "Oops! Try again.";
+            }
+        }
+    </script>
+
+</body>
+</html>
